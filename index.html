@@ -9,9 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ----------------------------- */
-/* VARIÁVEIS DE ESTILO */
-/* ----------------------------- */
+/* VARS */
 :root{
   --green-03: rgba(0,128,0,0.03);
   --green-100: #008000;
@@ -21,170 +19,152 @@
   --radius: 18px;
   --shadow: 0 8px 24px rgba(0,0,0,0.10);
   --shadow-strong: 0 14px 40px rgba(0,0,0,0.14);
+  --max-width:1200px;
 }
 
-/* ----------------------------- */
 /* RESET */
-/* ----------------------------- */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
 body{
-  font-family:'Inter', sans-serif;
+  font-family:'Inter',sans-serif;
   background:var(--green-03);
   color:var(--blue-100);
-  line-height:1.65;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
 }
 
-/* Layout geral mobile-first */
+/* CONTAINER */
 .container{
   width:100%;
-  max-width:1200px;
-  margin:auto;
-  padding:16px;
+  max-width:var(--max-width);
+  margin:18px auto;
+  padding:14px;
 }
 
-/* ----------------------------- */
-/* HEADER • MOBILE FIRST */
-/* ----------------------------- */
-header{
+/* HEADER */
+.header{
   background:#fff;
-  padding:16px;
   border-radius:var(--radius);
+  padding:16px;
   box-shadow:var(--shadow);
-  text-align:center;
   position:relative;
-  margin-bottom:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
 }
-
-header img.logo{
-  height:54px;
-  position:absolute;
-  left:14px;
-  top:14px;
-}
-
-header img.svg-icon{
-  height:40px;
-  position:absolute;
-  right:14px;
-  top:14px;
-}
-
-header h1{
-  font-family:'Lexend', sans-serif;
+.header img.logo{ position:absolute; left:16px; top:12px; height:56px; }
+.header img.svg{ position:absolute; right:16px; top:12px; height:44px; opacity:0.9; }
+.header h1{
+  font-family:'Lexend',sans-serif;
   font-size:20px;
-  padding:0 40px;
   color:var(--blue-dark);
+  text-align:center;
+  padding:0 40px;
 }
 
-/* ----------------------------- */
-/* HERO ROW (vídeo + módulo 1) */
-/* ----------------------------- */
+/* HERO ROW (VIDEO + MODAL) */
 .hero-row{
   display:flex;
+  gap:16px;
   flex-wrap:wrap;
-  gap:18px;
-  margin-bottom:30px;
+  margin-bottom:20px;
 }
-
 .video-box{
   flex:1 1 280px;
 }
-
 .video-box video{
   width:100%;
   aspect-ratio:9/16;
-  border-radius:var(--radius);
+  border-radius:14px;
   border:3px solid var(--green-100);
   box-shadow:var(--shadow-strong);
   background:var(--green-03);
   object-fit:cover;
 }
 
-/* Módulo ao lado do vídeo */
+/* PRIMARY MODULE RIGHT OF VIDEO */
 .mod-box-primary{
-  flex:1 1 320px;
+  flex:1 1 340px;
   background:var(--green-03);
   border:3px solid var(--green-100);
   border-radius:var(--radius);
-  padding:20px;
+  padding:18px;
   box-shadow:var(--shadow);
 }
-
-/* ----------------------------- */
-/* MÓDULOS ACORDION (mobile UX) */
-/* ----------------------------- */
-.section{
-  margin-bottom:18px;
+.mod-box-primary h2{
+  font-family:'Lexend',sans-serif;
+  color:var(--blue-dark);
+  font-size:18px;
+  margin-bottom:8px;
+  border-left:6px solid var(--green-100);
+  padding-left:12px;
 }
 
-.section summary{
-  background:var(--green-03);
-  padding:18px;
+/* ACCORDION SECTIONS (mobile UX) */
+.details-wrap{ margin-top:12px; display:block; }
+.section{
+  margin-bottom:14px;
   border-radius:var(--radius);
-  border:3px solid var(--green-100);
+  overflow:hidden;
+}
+.section summary{
   list-style:none;
   cursor:pointer;
-  font-family:'Lexend', sans-serif;
-  font-size:18px;
+  background:var(--green-03);
+  border:3px solid var(--green-100);
+  padding:14px 16px;
+  border-radius:var(--radius);
+  font-family:'Lexend',sans-serif;
+  font-size:17px;
   color:var(--blue-dark);
-  transition:0.3s;
   box-shadow:var(--shadow);
+  transition:background .2s, transform .15s;
 }
-
-.section summary:hover{
-  background:rgba(0,128,0,0.08);
-}
-
-.section p{
-  padding:18px;
+.section[open] summary{ background:rgba(0,128,0,0.06); }
+.section summary:hover{ transform:translateY(-3px); }
+.section .content{
+  background:var(--green-03);
+  border-left:3px solid var(--green-100);
+  border-right:3px solid var(--green-100);
+  border-bottom:3px solid var(--green-100);
+  padding:14px 16px 20px 16px;
   font-size:15px;
+  color:var(--blue-100);
   white-space:pre-wrap;
 }
 
-/* ----------------------------- */
 /* FOOTER */
-/* ----------------------------- */
 footer{
+  margin-top:18px;
   background:var(--blue-100);
-  color:#fff;
+  color:var(--white);
   border-radius:var(--radius);
-  padding:20px;
-  margin-top:30px;
-  box-shadow:var(--shadow);
+  padding:16px;
   display:flex;
-  flex-wrap:wrap;
   gap:12px;
   align-items:center;
   justify-content:space-between;
+  flex-wrap:wrap;
+  box-shadow:var(--shadow);
 }
+.footer-left{ flex:1 1 260px; font-size:13px; }
+.footer-center{ flex:0 1 180px; text-align:center; }
+.footer-center img{ max-width:140px; border-radius:10px; border:2px solid rgba(255,255,255,0.12); }
+.footer-right img{ max-width:120px; }
 
-.footer-left{
-  flex:1 1 260px;
-  font-size:13px;
+/* RESPONSIVE ADJUSTS */
+@media(min-width:900px){
+  .container{ padding:20px; }
+  .header h1{ font-size:24px; padding:0 60px; }
+  .mod-box-primary h2{ font-size:20px; }
+  .section summary{ font-size:18px; }
 }
-
-.footer-center img{
-  max-width:150px;
-  border-radius:10px;
-}
-
-.footer-right img{
-  max-width:110px;
-}
-
-/* ----------------------------- */
-/* DESKTOP */
-/* ----------------------------- */
-@media(min-width:800px){
-  header h1{ font-size:26px; }
-  .section summary{ font-size:20px; }
-  .mod-box-primary{ padding:26px; }
+@media(max-width:520px){
+  .header img.logo{ height:48px; left:10px; top:8px; }
+  .header img.svg{ height:36px; right:10px; top:8px; }
+  .header h1{ font-size:18px; padding:0 30px; }
 }
 </style>
 </head>
@@ -192,120 +172,135 @@ footer{
 
 <div class="container">
 
-<!-- HEADER -->
-<header>
-  <img src="ctb.png" class="logo" alt="CTB">
-  <h1>PROJETO OFICIAL – LIGA BAIANA DE TÊNIS DE MESA – CTB</h1>
-  <img src="ctb.svg" class="svg-icon" alt="Ícone CTB">
-</header>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <img src="ctb.png" alt="CTB" class="logo">
+    <h1>PROJETO OFICIAL – LIGA BAIANA DE TÊNIS DE MESA – CTB</h1>
+    <img src="ctb.svg" alt="Ícone CTB" class="svg">
+  </header>
 
-<!-- HERO (vídeo + módulo 1) -->
-<div class="hero-row">
+  <!-- HERO: VIDEO 9:16 LEFT + MÓDULO 1 RIGHT -->
+  <div class="hero-row" role="region" aria-label="Abertura com vídeo e apresentação">
+    <div class="video-box" aria-hidden="false">
+      <video controls playsinline preload="metadata" poster="" aria-label="Vídeo de apresentação CTB">
+        <source src="ctb.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+    </div>
 
-  <div class="video-box">
-    <video controls playsinline>
-      <source src="ctb.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- MÓDULO 1 COMPLETO -->
-  <div class="mod-box-primary">
-    <h2 style="font-family:'Lexend'; color:var(--blue-dark); margin-top:0;">Apresentação Institucional</h2>
-    <p>
+    <aside class="mod-box-primary" aria-labelledby="mod1title">
+      <h2 id="mod1title">Apresentação Institucional</h2>
+      <div>
 O Clube dos Tenistas da Bahia (CTB) apresenta esta proposta como um projeto estruturado para a implantação, consolidação e expansão da Liga Baiana de Tênis de Mesa. A instituição reúne experiência administrativa, técnica e pedagógica, apoiada por dirigentes, treinadores e árbitros capacitados. O projeto visa institucionalizar um circuito regular que atue em múltiplas frentes: formação de base, capacitação de profissionais, organização de etapas competitivas e inclusão social. A proposta articula parcerias com prefeituras, secretarias de esporte, escolas, empresas privadas e agentes comunitários, buscando sinergia entre políticas públicas e iniciativas da sociedade civil. Com foco em sustentabilidade e impacto regional, o CTB oferece infraestrutura técnica, materiais homologados e supervisão operacional, garantindo que cada etapa seja realizada com padrões de qualidade compatíveis com exigências nacionais e internacionais. O objetivo é promover participação ampliada, criar oportunidades de alto rendimento e fomentar o desenvolvimento humano por meio do esporte, consolidando o CTB como referência regional no desenvolvimento do tênis de mesa.
-    </p>
+      </div>
+    </aside>
   </div>
 
-</div>
+  <!-- ACORDION SECTIONS (MÓDULOS 2–10 + Resumo) -->
+  <div class="details-wrap" role="main">
 
-<!-- MÓDULOS EM ACORDION MOBILE UX -->
-
-<!-- MÓDULO 2 -->
-<details class="section" open>
-  <summary>Justificativa</summary>
-  <p>
+    <!-- MÓDULO 2 -->
+    <details class="section" open>
+      <summary>Justificativa</summary>
+      <div class="content">
 A Bahia ainda apresenta lacunas estruturais para o desenvolvimento sistemático do tênis de mesa, especialmente no interior do estado. Há carência de circuitos regulares, ausência de um calendário unificado e limitações na formação de árbitros e professores específicos para a modalidade. O projeto da Liga Baiana surge para preencher essa lacuna, criando uma rede de eventos e ações pedagógicas que favoreçam a descoberta de talentos e a inclusão de crianças e jovens em ambientes escolares e comunitários. O tênis de mesa é uma modalidade de baixo custo por praticante, com alta relação custo-benefício social, pois promove concentração, coordenação motora, tomada de decisão rápida e disciplina, benefícios essenciais para o desempenho escolar e a formação cidadã. Além disso, as etapas do circuito têm potencial de movimentar economias locais por meio de pequenos serviços, alojamento e comércio, gerando emprego e renda em cidades-sede. A justificativa do projeto também se apoia em princípios de equidade: democratizar o acesso à prática esportiva, reduzir desigualdades territoriais e ampliar participação feminina e de pessoas com deficiência, contribuindo para políticas públicas de promoção do esporte e bem-estar.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 3 -->
-<details class="section">
-  <summary>Objetivos Geral e Específicos</summary>
-  <p>
+    <!-- MÓDULO 3 -->
+    <details class="section">
+      <summary>Objetivos Geral e Específicos</summary>
+      <div class="content">
 O objetivo geral do projeto é estruturar e implementar um circuito estadual de tênis de mesa que promova formação técnica, inclusão social e oportunidades competitivas continuadas. Entre os objetivos específicos estão a criação de um calendário anual de etapas em Salvador e cidades do interior; a capacitação de professores, árbitros e gestores; a padronização de arenas e equipamentos conforme normas ITTF; a realização de oficinas em escolas públicas para iniciação esportiva; e a estruturação de centros regionais de referência para observação e desenvolvimento de talentos. O projeto busca ainda fomentar a participação feminina, promover inclusão de pessoas com deficiência e integrar práticas pedagógicas que aproximem o esporte da educação formal. Adicionalmente, propõe a implementação de instrumentos de monitoramento e avaliação que mensurem número de beneficiários, evolução técnica dos atletas, impacto social nas comunidades e retorno sobre o investimento para patrocinadores. Por fim, espera-se consolidar um pipeline sustentável de formação que permita a migração de jovens atletas para competições estaduais e nacionais, respeitando princípios de transparência e boa governança.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 4 -->
-<details class="section">
-  <summary>Modelo de Negócios</summary>
-  <p>
+    <!-- MÓDULO 4 -->
+    <details class="section">
+      <summary>Modelo de Negócios</summary>
+      <div class="content">
 O modelo de negócios do projeto equilibra sustentabilidade financeira e missão social. O CTB assume a função de central técnica, oferecendo padronização de equipamentos, arbitragem, comunicação e gestão de ranking, enquanto os clubes locais atuam como polos de execução, recebendo contrapartidas financeiras decorrentes das inscrições e das ações de capacitação. A receita provém de múltiplas fontes: inscrições de atletas, licenciamento de materiais, patrocínios privados, contrapartidas de prefeituras, venda de espaços de comunicação e captação via Lei de Incentivo ao Esporte. Esse mix reduz a dependência de uma única fonte de recursos, garantindo resiliência financeira. Além disso, o modelo prevê mecanismos de retorno para patrocinadores, como visibilidade regional, associacão a programas sociais e relatórios de impacto. A governança financeira inclui prestações de contas rigorosas, previsão orçamentária por etapa, provisões para manutenção de materiais e investimento em formação contínua, assegurando o equilíbrio entre qualidade operacional e viabilidade a médio e longo prazo.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 5 -->
-<details class="section">
-  <summary>Plano de Negócios e Estratégia Operacional</summary>
-  <p>
+    <!-- MÓDULO 5 -->
+    <details class="section">
+      <summary>Plano de Negócios e Estratégia Operacional</summary>
+      <div class="content">
 O plano de negócios define fases operacionais claras e indicadores para acompanhamento. A etapa inicial contempla a seleção de cidades-piloto, aquisição de mesas e barreiras certificadas, elaboração de manuais operacionais e capacitação de equipes. A fase de consolidação articula calendário completo, ações em escolas, formação de árbitros certificados e criação de centros regionais para treinos e intercâmbios. Na fase de expansão, o projeto amplia número de polos, fortalece patrocínios e consolida parcerias institucionais. A operação considera logística otimizada, transporte de materiais, alojamento, credenciamento de participantes e comunicação integrada. Financeiramente, o planejamento inclui fluxo de caixa por etapa, previsão de receitas e despesas, metas de captação via incentivos fiscais e programas de fidelização de patrocinadores. Ferramentas digitais para inscrições, súmulas eletrônicas e ranking estadual garantem eficiência operacional e transparência nas entregas, enquanto relatórios trimestrais orientam correções e otimizações estratégicas.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 6 -->
-<details class="section">
-  <summary>Integração com a Lei de Incentivo ao Esporte</summary>
-  <p>
+    <!-- MÓDULO 6 -->
+    <details class="section">
+      <summary>Integração com a Lei de Incentivo ao Esporte</summary>
+      <div class="content">
 O projeto foi concebido para atender aos requisitos da Lei de Incentivo ao Esporte, promovendo ações que se qualificam como formação de base, inclusão social e promoção da saúde. O desenho financeiro e operacional contempla a documentação necessária para captação via incentivo fiscal, incluindo plano de aplicação, metas, indicadores de impacto, cronograma e contrapartidas sociais. As despesas elegíveis preveem aquisição de equipamentos homologados, transporte de equipes e materiais, remuneração técnica para capacitações, realização de oficinas em escolas públicas e produção de relatórios de prestação de contas. A governança do projeto assegura transparência documental, com emissão de notas fiscais, registros fotográficos e listas de beneficiários para cumprir obrigações legais. A integração com a Lei de Incentivo amplia o alcance das ações, reduz barreiras financeiras para clubes do interior e sensibiliza empresas a associar sua marca a projetos de alto impacto social e esportivo.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 7 -->
-<details class="section">
-  <summary>Metodologia e Sistema Técnico</summary>
-  <p>
+    <!-- MÓDULO 7 -->
+    <details class="section">
+      <summary>Metodologia e Sistema Técnico</summary>
+      <div class="content">
 A metodologia do CTB é baseada em práticas reconhecidas internacionalmente e adaptadas à realidade regional. As arenas seguem uma padronização que contempla mesas ITTF, redes e barreiras certificadas, iluminação adequada e áreas de circulação seguras. Para a organização das chaves competitivas, adota-se o Snake System que equilibra os grupos independentemente do número de inscritos, proporcionando justiça esportiva e qualidade técnica. A arbitragem segue um manual próprio, baseado nas normas ITTF, com procedimentos claros para conferência pré-jogo, verificação de material, aplicação de penalidades e registro de súmulas digitais. Além disso, há um programa de formação contínua para árbitros, técnicos e gestores, bem como clínicas pedagógicas em escolas para formação da base. O uso de plataformas digitais permite atualização em tempo real de resultados, classificação por ranking e transparência nas decisões, consolidando um sistema técnico robusto e confiável.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 8 -->
-<details class="section">
-  <summary>Impacto Social, Educacional e Comunitário</summary>
-  <p>
+    <!-- MÓDULO 8 -->
+    <details class="section">
+      <summary>Impacto Social, Educacional e Comunitário</summary>
+      <div class="content">
 O projeto tem como prioridade gerar impacto social mensurável, ao oferecer atividades esportivas que favorecem inclusão, saúde e educação. A integração com escolas públicas possibilita oficinas regulares, formação de professores e monitoria para continuidade das atividades dentro do ambiente escolar. As etapas da Liga promovem convívio comunitário, incentivam a presença familiar nos eventos e fortalecem laços entre clubes, poder público e iniciativa privada. Do ponto de vista educacional, a prática constante do tênis de mesa contribui para o desenvolvimento cognitivo, concentração, coordenação motora e disciplina, refletindo positivamente no rendimento escolar. A proposta contempla políticas específicas para aumentar a participação feminina e garantir acessibilidade para pessoas com deficiência, ampliando oportunidades e promovendo igualdade de condições. Ainda, as competições geram impacto econômico local, movimentando serviços e incentivando pequenas empresas nas cidades-sede, reforçando a dimensão comunitária do projeto.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 9 -->
-<details class="section">
-  <summary>Governança, Transparência e Controle</summary>
-  <p>
+    <!-- MÓDULO 9 -->
+    <details class="section">
+      <summary>Governança, Transparência e Controle</summary>
+      <div class="content">
 A governança do projeto segue princípios de boa prática administrativa, com divisão clara de responsabilidades entre coordenação geral, coordenação técnica, arbitragem, logística e comunicação. Serão instituídas comissões de acompanhamento e um comitê financeiro responsável pela validação de despesas, análise de contratos e elaboração de relatórios periódicos. Para garantir total transparência, o CTB manterá documentação organizada, relatórios financeiros trimestrais, notas fiscais, registros fotográficos e controle de público e beneficiários. Nos projetos incentivados, a prestação de contas seguirá normas dos órgãos competentes, com auditorias e possibilidade de fiscalização por parceiros e patrocinadores. Indicadores-chave de desempenho serão monitorados continuamente e divulgados aos sócios e apoiadores, garantindo responsabilidade e fidelidade ao propósito social do projeto. O modelo de governança visa também fomentar a participação associativa nas decisões estratégicas, fortalecendo a legitimidade do CTB perante seus membros.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- MÓDULO 10 -->
-<details class="section">
-  <summary>Cronograma e Indicadores de Desempenho</summary>
-  <p>
+    <!-- MÓDULO 10 -->
+    <details class="section">
+      <summary>Cronograma e Indicadores de Desempenho</summary>
+      <div class="content">
 O cronograma anual prevê fases sequenciais e entregáveis claros: planejamento e capacitação inicial, seleção de cidades-piloto, realização de etapas regionais mensais, oficinas em escolas, formação de árbitros e uma grande final estadual. Cada etapa será acompanhada por indicadores como número de participantes por categoria, participação feminina, número de escolas atendidas, horas de formação, evolução do ranking dos atletas, satisfação de participantes e impacto de mídia local. Avaliações trimestrais permitirão correções, remanejamento de recursos e adequações logísticas. Ferramentas digitais serão usadas para gestão de inscrições, súmulas eletrônicas e geração de relatórios automatizados que suportem a tomada de decisão. Os indicadores também servirão para demonstrar retorno sobre investimento a patrocinadores e órgãos públicos, consolidando a sustentabilidade do projeto e garantindo sua continuidade a médio e longo prazo.
-  </p>
-</details>
+      </div>
+    </details>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">
-    CTB - Clube dos Tenistas da Bahia<br>
-    CNPJ 23.146.328/0001-16<br>
-    Informações institucionais para contato e comunicação oficial.
+    <!-- NOVO MÓDULO FINAL: RESUMO -->
+    <details class="section">
+      <summary>Resumo – Funcionamento da Liga Baiana de Tênis de Mesa</summary>
+      <div class="content">
+O CTB – Clube dos Tenistas da Bahia estrutura e coordena o projeto de implantação e fortalecimento da Liga Baiana de Tênis de Mesa, com foco na captação de atletas, no desenvolvimento esportivo e na sustentabilidade comercial do circuito.
+
+Para garantir a qualidade e a padronização das etapas, o CTB realiza a aquisição dos equipamentos esportivos necessários, assegurando uniformidade em todas as sedes. Além disso, promove a capacitação das equipes de gestão e arbitragem, oferecendo formação contínua e atualizada.
+
+O projeto também inclui a realização de oficinas de iniciação ao tênis de mesa em escolas públicas dos municípios participantes, ampliando o acesso ao esporte e fortalecendo a base de jovens atletas. O CTB ainda dá suporte direto na organização dos eventos, contribuindo com a identidade visual e a personalização dos ginásios onde as etapas acontecem.
+
+Cada cidade integrante da Liga é responsável pela realização de um torneio anual, correspondente à sua etapa no Circuito da Liga. Os municípios recebem 100% do valor das inscrições e têm autonomia para selecionar e disponibilizar a melhor infraestrutura esportiva (ginásios e equipamentos complementares) para a execução do evento, garantindo condições adequadas de competição.
+      </div>
+    </details>
+
   </div>
-  <div class="footer-center">
-    <img src="ctblinkedin.jpg" alt="CTB LinkedIn">
-  </div>
-  <div class="footer-right">
-    <img src="ctb1.png" alt="CTB Logo Alternativa">
-  </div>
-</footer>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-left">
+      CTB - Clube dos Tenistas da Bahia<br>
+      CNPJ 23.146.328/0001-16<br>
+      Informações institucionais para contato e comunicação oficial.
+    </div>
+    <div class="footer-center">
+      <img src="ctblinkedin.jpg" alt="CTB LinkedIn">
+    </div>
+    <div class="footer-right">
+      <img src="ctb1.png" alt="CTB">
+    </div>
+  </footer>
 
 </div>
 
