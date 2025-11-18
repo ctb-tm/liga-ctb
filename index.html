@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Projeto Oficial – Liga Baiana de Tênis de Mesa – CTB</title>
+<style>
+  :root{
+    --green-20: rgba(0,128,0,0.20);
+    --green-5: rgba(0,128,0,0.05);
+    --green-100: rgba(0,128,0,1);
+    --blue-100: #0000FF;
+    --max-width: 1000px;
+    --radius: 14px;
+    --padding: 28px;
+    --shadow: 0 8px 30px rgba(0,0,0,0.08);
+    --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* Page background (externo) */
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:var(--font-sans);
+    background: var(--green-20);
+    color:var(--blue-100);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* Container interno com contorno verde 100% e fundo verde 5% */
+  .page{
+    max-width:var(--max-width);
+    margin:36px auto;
+    background: linear-gradient(var(--green-5), var(--green-5));
+    border: 4px solid var(--green-100);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:var(--padding);
+    box-sizing:border-box;
+  }
+
+  /* Header clean: logo left, title centered */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    gap:16px;
+    padding-bottom:18px;
+    border-bottom:1px dashed rgba(0,0,255,0.12);
+  }
+  header img.logo{
+    position:absolute;
+    left:24px;
+    width:84px;
+    height:auto;
+    object-fit:contain;
+  }
+  header h1{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    text-align:center;
+    color:var(--blue-100);
+    letter-spacing:0.2px;
+  }
+
+  /* Modules layout */
+  .module{
+    background:transparent;
+    margin-top:22px;
+    padding:20px;
+    border-radius:10px;
+  }
+  .module h2{
+    margin:0 0 10px 0;
+    font-size:18px;
+    color:var(--blue-100);
+    border-left:6px solid var(--green-100);
+    padding-left:12px;
+  }
+  .module p{
+    margin:0;
+    line-height:1.6;
+    text-align:justify;
+    font-size:14px;
+    white-space:pre-wrap;
+  }
+
+  /* Footer small */
+  footer{
+    margin-top:26px;
+    font-size:12px;
+    opacity:0.9;
+    color:var(--blue-100);
+    text-align:center;
+  }
+
+  /* Responsividade */
+  @media (max-width:640px){
+    header img.logo{ width:64px; left:12px; }
+    .page{ margin:18px; padding:18px; }
+    header h1{ font-size:18px; }
+  }
+</style>
+</head>
+<body>
+  <div class="page" role="main">
+    <header>
+      <!-- Coloque o arquivo ctb.png na mesma pasta deste HTML -->
+      <img src="ctb.png" alt="Logomarca CTB" class="logo" />
+      <h1>PROJETO OFICIAL – LIGA BAIANA DE TÊNIS DE MESA – CTB</h1>
+    </header>
+
+    <!-- MÓDULO 1 – Apresentação Institucional (≥ 800 caracteres) -->
+    <section class="module" id="mod1">
+      <h2>Apresentação Institucional</h2>
+      <p>
+O Clube dos Tenistas da Bahia (CTB) apresenta esta proposta como um projeto estruturado para a implantação, consolidação e expansão da Liga Baiana de Tênis de Mesa. A instituição reúne experiência administrativa, técnica e pedagógica, apoiada por dirigentes, treinadores e árbitros capacitados. O projeto visa institucionalizar um circuito regular que atue em múltiplas frentes: formação de base, capacitação de profissionais, organização de etapas competitivas e inclusão social. A proposta articula parcerias com prefeituras, secretarias de esporte, escolas, empresas privadas e agentes comunitários, buscando sinergia entre políticas públicas e iniciativas da sociedade civil. Com foco em sustentabilidade e impacto regional, o CTB oferece infraestrutura técnica, materiais homologados e supervisão operacional, garantindo que cada etapa seja realizada com padrões de qualidade compatíveis com exigências nacionais e internacionais. O objetivo é promover participação ampliada, criar oportunidades de alto rendimento e fomentar o desenvolvimento humano por meio do esporte, consolidando o CTB como referência regional no desenvolvimento do tênis de mesa.
+      </p>
+    </section>
+
+    <!-- MÓDULO 2 – Justificativa (≥ 800 caracteres) -->
+    <section class="module" id="mod2">
+      <h2>Justificativa</h2>
+      <p>
+A Bahia ainda apresenta lacunas estruturais para o desenvolvimento sistemático do tênis de mesa, especialmente no interior do estado. Há carência de circuitos regulares, ausência de um calendário unificado e limitações na formação de árbitros e professores específicos para a modalidade. O projeto da Liga Baiana surge para preencher essa lacuna, criando uma rede de eventos e ações pedagógicas que favoreçam a descoberta de talentos e a inclusão de crianças e jovens em ambientes escolares e comunitários. O tênis de mesa é uma modalidade de baixo custo por praticante, com alta relação custo-benefício social, pois promove concentração, coordenação motora, tomada de decisão rápida e disciplina, benefícios essenciais para o desempenho escolar e a formação cidadã. Além disso, as etapas do circuito têm potencial de movimentar economias locais por meio de pequenos serviços, alojamento e comércio, gerando emprego e renda em cidades-sede. A justificativa do projeto também se apoia em princípios de equidade: democratizar o acesso à prática esportiva, reduzir desigualdades territoriais e ampliar participação feminina e de pessoas com deficiência, contribuindo para políticas públicas de promoção do esporte e bem-estar.
+      </p>
+    </section>
+
+    <!-- MÓDULO 3 – Objetivos (≥ 800 caracteres) -->
+    <section class="module" id="mod3">
+      <h2>Objetivos Geral e Específicos</h2>
+      <p>
+O objetivo geral do projeto é estruturar e implementar um circuito estadual de tênis de mesa que promova formação técnica, inclusão social e oportunidades competitivas continuadas. Entre os objetivos específicos estão a criação de um calendário anual de etapas em Salvador e cidades do interior; a capacitação de professores, árbitros e gestores; a padronização de arenas e equipamentos conforme normas ITTF; a realização de oficinas em escolas públicas para iniciação esportiva; e a estruturação de centros regionais de referência para observação e desenvolvimento de talentos. O projeto busca ainda fomentar a participação feminina, promover inclusão de pessoas com deficiência e integrar práticas pedagógicas que aproximem o esporte da educação formal. Adicionalmente, propõe a implementação de instrumentos de monitoramento e avaliação que mensurem número de beneficiários, evolução técnica dos atletas, impacto social nas comunidades e retorno sobre o investimento para patrocinadores. Por fim, espera-se consolidar um pipeline sustentável de formação que permita a migração de jovens atletas para competições estaduais e nacionais, respeitando princípios de transparência e boa governança.
+      </p>
+    </section>
+
+    <!-- MÓDULO 4 – Modelo de Negócios (≥ 800 caracteres) -->
+    <section class="module" id="mod4">
+      <h2>Modelo de Negócios</h2>
+      <p>
+O modelo de negócios do projeto equilibra sustentabilidade financeira e missão social. O CTB assume a função de central técnica, oferecendo padronização de equipamentos, arbitragem, comunicação e gestão de ranking, enquanto os clubes locais atuam como polos de execução, recebendo contrapartidas financeiras decorrentes das inscrições e das ações de capacitação. A receita provém de múltiplas fontes: inscrições de atletas, licenciamento de materiais, patrocínios privados, contrapartidas de prefeituras, venda de espaços de comunicação e captação via Lei de Incentivo ao Esporte. Esse mix reduz a dependência de uma única fonte de recursos, garantindo resiliência financeira. Além disso, o modelo prevê mecanismos de retorno para patrocinadores, como visibilidade regional, associacão a programas sociais e relatórios de impacto. A governança financeira inclui prestações de contas rigorosas, previsão orçamentária por etapa, provisões para manutenção de materiais e investimento em formação contínua, assegurando o equilíbrio entre qualidade operacional e viabilidade a médio e longo prazo.
+      </p>
+    </section>
+
+    <!-- MÓDULO 5 – Plano de Negócios e Estratégia Operacional (≥ 800 caracteres) -->
+    <section class="module" id="mod5">
+      <h2>Plano de Negócios e Estratégia Operacional</h2>
+      <p>
+O plano de negócios define fases operacionais claras e indicadores para acompanhamento. A etapa inicial contempla a seleção de cidades-piloto, aquisição de mesas e barreiras certificadas, elaboração de manuais operacionais e capacitação de equipes. A fase de consolidação articula calendário completo, ações em escolas, formação de árbitros certificados e criação de centros regionais para treinos e intercâmbios. Na fase de expansão, o projeto amplia número de polos, fortalece patrocínios e consolida parcerias institucionais. A operação considera logística otimizada, transporte de materiais, alojamento, credenciamento de participantes e comunicação integrada. Financeiramente, o planejamento inclui fluxo de caixa por etapa, previsão de receitas e despesas, metas de captação via incentivos fiscais e programas de fidelização de patrocinadores. Ferramentas digitais para inscrições, súmulas eletrônicas e ranking estadual garantem eficiência operacional e transparência nas entregas, enquanto relatórios trimestrais orientam correções e otimizações estratégicas.
+      </p>
+    </section>
+
+    <!-- MÓDULO 6 – Integração com a Lei de Incentivo ao Esporte (≥ 800 caracteres) -->
+    <section class="module" id="mod6">
+      <h2>Integração com a Lei de Incentivo ao Esporte</h2>
+      <p>
+O projeto foi concebido para atender aos requisitos da Lei de Incentivo ao Esporte, promovendo ações que se qualificam como formação de base, inclusão social e promoção da saúde. O desenho financeiro e operacional contempla a documentação necessária para captação via incentivo fiscal, incluindo plano de aplicação, metas, indicadores de impacto, cronograma e contrapartidas sociais. As despesas elegíveis preveem aquisição de equipamentos homologados, transporte de equipes e materiais, remuneração técnica para capacitações, realização de oficinas em escolas públicas e produção de relatórios de prestação de contas. A governança do projeto assegura transparência documental, com emissão de notas fiscais, registros fotográficos e listas de beneficiários para cumprir obrigações legais. A integração com a Lei de Incentivo amplia o alcance das ações, reduz barreiras financeiras para clubes do interior e sensibiliza empresas a associar sua marca a projetos de alto impacto social e esportivo.
+      </p>
+    </section>
+
+    <!-- MÓDULO 7 – Metodologia e Sistema Técnico (≥ 800 caracteres) -->
+    <section class="module" id="mod7">
+      <h2>Metodologia e Sistema Técnico</h2>
+      <p>
+A metodologia do CTB é baseada em práticas reconhecidas internacionalmente e adaptadas à realidade regional. As arenas seguem uma padronização que contempla mesas ITTF, redes e barreiras certificadas, iluminação adequada e áreas de circulação seguras. Para a organização das chaves competitivas, adota-se o Snake System que equilibra os grupos independentemente do número de inscritos, proporcionando justiça esportiva e qualidade técnica. A arbitragem segue um manual próprio, baseado nas normas ITTF, com procedimentos claros para conferência pré-jogo, verificação de material, aplicação de penalidades e registro de súmulas digitais. Além disso, há um programa de formação contínua para árbitros, técnicos e gestores, bem como clínicas pedagógicas em escolas para formação da base. O uso de plataformas digitais permite atualização em tempo real de resultados, classificação por ranking e transparência nas decisões, consolidando um sistema técnico robusto e confiável.
+      </p>
+    </section>
+
+    <!-- MÓDULO 8 – Impacto Social, Educacional e Comunitário (≥ 800 caracteres) -->
+    <section class="module" id="mod8">
+      <h2>Impacto Social, Educacional e Comunitário</h2>
+      <p>
+O projeto tem como prioridade gerar impacto social mensurável, ao oferecer atividades esportivas que favorecem inclusão, saúde e educação. A integração com escolas públicas possibilita oficinas regulares, formação de professores e monitoria para continuidade das atividades dentro do ambiente escolar. As etapas da Liga promovem convívio comunitário, incentivam a presença familiar nos eventos e fortalecem laços entre clubes, poder público e iniciativa privada. Do ponto de vista educacional, a prática constante do tênis de mesa contribui para o desenvolvimento cognitivo, concentração, coordenação motora e disciplina, refletindo positivamente no rendimento escolar. A proposta contempla políticas específicas para aumentar a participação feminina e garantir acessibilidade para pessoas com deficiência, ampliando oportunidades e promovendo igualdade de condições. Ainda, as competições geram impacto econômico local, movimentando serviços e incentivando pequenas empresas nas cidades-sede, reforçando a dimensão comunitária do projeto.
+      </p>
+    </section>
+
+    <!-- MÓDULO 9 – Governança, Transparência e Controle (≥ 800 caracteres) -->
+    <section class="module" id="mod9">
+      <h2>Governança, Transparência e Controle</h2>
+      <p>
+A governança do projeto segue princípios de boa prática administrativa, com divisão clara de responsabilidades entre coordenação geral, coordenação técnica, arbitragem, logística e comunicação. Serão instituídas comissões de acompanhamento e um comitê financeiro responsável pela validação de despesas, análise de contratos e elaboração de relatórios periódicos. Para garantir total transparência, o CTB manterá documentação organizada, relatórios financeiros trimestrais, notas fiscais, registros fotográficos e controle de público e beneficiários. Nos projetos incentivados, a prestação de contas seguirá normas dos órgãos competentes, com auditorias e possibilidade de fiscalização por parceiros e patrocinadores. Indicadores-chave de desempenho serão monitorados continuamente e divulgados aos sócios e apoiadores, garantindo responsabilidade e fidelidade ao propósito social do projeto. O modelo de governança visa também fomentar a participação associativa nas decisões estratégicas, fortalecendo a legitimidade do CTB perante seus membros.
+      </p>
+    </section>
+
+    <!-- MÓDULO 10 – Cronograma e Indicadores de Desempenho (≥ 800 caracteres) -->
+    <section class="module" id="mod10">
+      <h2>Cronograma e Indicadores de Desempenho</h2>
+      <p>
+O cronograma anual prevê fases sequenciais e entregáveis claros: planejamento e capacitação inicial, seleção de cidades-piloto, realização de etapas regionais mensais, oficinas em escolas, formação de árbitros e uma grande final estadual. Cada etapa será acompanhada por indicadores como número de participantes por categoria, participação feminina, número de escolas atendidas, horas de formação, evolução do ranking dos atletas, satisfação de participantes e impacto de mídia local. Avaliações trimestrais permitirão correções, remanejamento de recursos e adequações logísticas. Ferramentas digitais serão usadas para gestão de inscrições, súmulas eletrônicas e geração de relatórios automatizados que suportem a tomada de decisão. Os indicadores também servirão para demonstrar retorno sobre investimento a patrocinadores e órgãos públicos, consolidando a sustentabilidade do projeto e garantindo sua continuidade a médio e longo prazo.
+      </p>
+    </section>
+
+    <footer>
+      CTB – Clube dos Tenistas da Bahia · Projeto Liga Baiana de Tênis de Mesa · Documento de Apresentação aos Clubes
+    </footer>
+  </div>
+</body>
+</html>
